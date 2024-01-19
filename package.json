@@ -3,11 +3,15 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
-    "prettier": "prettier --write --ignore-unknown .",
-    "prettier:check": "prettier --check --ignore-unknown .",
+    "format": "prettier --write .",
+    "lint": "next lint --max-warnings 0 && prettier --check .",
     "seed": "node -r dotenv/config ./scripts/seed.js",
     "start": "next start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format && git add -A ."
+    }
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -35,6 +39,7 @@
     "eslint": "^8.52.0",
     "eslint-config-next": "^14.0.0",
     "eslint-config-prettier": "9.0.0",
+    "husky": "^8.0.3",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "0.5.4"
   },
