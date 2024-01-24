@@ -6,8 +6,8 @@ import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s || Acme Dashboard',
-    default: 'Acme Dashboard',
+    template: '%s | Acme',
+    default: 'Acme',
   },
   description: 'The official Next.js Course Dashboard, built with App Router.',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
